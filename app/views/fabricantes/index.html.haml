@@ -1,0 +1,27 @@
+%h1 Listing fabricantes
+
+%table
+  %thead
+    %tr
+      %th Nome
+      %th Endereco
+      %th Numero
+      %th Cnpj
+      %th
+      %th
+      %th
+
+  %tbody
+    - @fabricantes.each do |fabricante|
+      %tr
+        %td= fabricante.nome
+        %td= fabricante.endereco
+        %td= fabricante.numero
+        %td= fabricante.cnpj
+        %td= link_to 'Show', fabricante
+        %td= link_to 'Edit', edit_fabricante_path(fabricante)
+        %td= link_to 'Excluir', fabricante, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Fabricante', new_fabricante_path

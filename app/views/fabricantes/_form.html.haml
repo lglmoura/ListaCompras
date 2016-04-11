@@ -1,0 +1,11 @@
+= simple_form_for(@fabricante) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :nome
+    = f.input :endereco, label: "Endereço"
+    = f.input :numero
+    = f.input :cnpj, label:"CNPJ"
+
+  .form-actions
+    = f.submit "Salvar"

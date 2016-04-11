@@ -1,0 +1,341 @@
+  [1m[36m (94.3ms)[0m  [1mCREATE TABLE "fabricantes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "endereco" varchar, "numero" varchar, "cnpj" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (97.4ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.3ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (97.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (69.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160411233307')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (78.3ms)[0m  DELETE FROM "fabricantes";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  DELETE FROM sqlite_sequence where name = 'fabricantes';
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "fabricantes" ("nome", "endereco", "numero", "cnpj", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nome", "MyString"], ["endereco", "MyString"], ["numero", "MyString"], ["cnpj", "MyString"], ["created_at", "2016-04-11 23:35:57.302905"], ["updated_at", "2016-04-11 23:35:57.302905"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/fabricantes" for 127.0.0.1 at 2016-04-11 20:35:57 -0300
+Processing by FabricantesController#index as HTML
+  [1m[36mFabricante Load (0.1ms)[0m  [1mSELECT "fabricantes".* FROM "fabricantes"[0m
+  Rendered fabricantes/index.html.haml (5.8ms)
+Completed 200 OK in 25ms (Views: 15.8ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/fabricantes/new" for 127.0.0.1 at 2016-04-11 20:35:57 -0300
+Processing by FabricantesController#new as HTML
+  Rendered fabricantes/_form.html.haml (563.1ms)
+  Rendered fabricantes/new.html.haml (579.9ms)
+Completed 200 OK in 581ms (Views: 580.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "fabricantes" ("nome", "endereco", "numero", "cnpj", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nome", "MyString"], ["endereco", "MyString"], ["numero", "MyString"], ["cnpj", "MyString"], ["created_at", "2016-04-11 23:35:57.974191"], ["updated_at", "2016-04-11 23:35:57.974191"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/fabricantes/1/edit" for 127.0.0.1 at 2016-04-11 20:35:57 -0300
+Processing by FabricantesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFabricante Load (0.3ms)[0m  [1mSELECT  "fabricantes".* FROM "fabricantes" WHERE "fabricantes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered fabricantes/_form.html.haml (8.8ms)
+  Rendered fabricantes/edit.html.haml (11.3ms)
+Completed 200 OK in 52ms (Views: 12.9ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (59.6ms)[0m  DELETE FROM "fabricantes";
+  [1m[36m (0.3ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  DELETE FROM sqlite_sequence where name = 'fabricantes';
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "fabricantes" ("nome", "endereco", "numero", "cnpj", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nome", "MyString"], ["endereco", "MyString"], ["numero", "MyString"], ["cnpj", "MyString"], ["created_at", "2016-04-11 23:39:07.282374"], ["updated_at", "2016-04-11 23:39:07.282374"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/fabricantes/1/edit" for 127.0.0.1 at 2016-04-11 20:39:07 -0300
+Processing by FabricantesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFabricante Load (0.2ms)[0m  [1mSELECT  "fabricantes".* FROM "fabricantes" WHERE "fabricantes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered fabricantes/_form.html.haml (438.3ms)
+  Rendered fabricantes/edit.html.haml (443.6ms)
+Completed 200 OK in 471ms (Views: 454.9ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "fabricantes" ("nome", "endereco", "numero", "cnpj", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nome", "MyString"], ["endereco", "MyString"], ["numero", "MyString"], ["cnpj", "MyString"], ["created_at", "2016-04-11 23:39:07.785066"], ["updated_at", "2016-04-11 23:39:07.785066"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/fabricantes" for 127.0.0.1 at 2016-04-11 20:39:07 -0300
+Processing by FabricantesController#index as HTML
+  [1m[36mFabricante Load (0.1ms)[0m  [1mSELECT "fabricantes".* FROM "fabricantes"[0m
+  Rendered fabricantes/index.html.haml (4.0ms)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/fabricantes/new" for 127.0.0.1 at 2016-04-11 20:39:07 -0300
+Processing by FabricantesController#new as HTML
+  Rendered fabricantes/_form.html.haml (5.3ms)
+  Rendered fabricantes/new.html.haml (6.6ms)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (62.4ms)[0m  DELETE FROM "fabricantes";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  DELETE FROM sqlite_sequence where name = 'fabricantes';
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/fabricantes/new" for 127.0.0.1 at 2016-04-11 20:39:35 -0300
+Processing by FabricantesController#new as HTML
+  Rendered fabricantes/_form.html.haml (462.8ms)
+  Rendered fabricantes/new.html.haml (467.7ms)
+Completed 200 OK in 505ms (Views: 479.0ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "fabricantes" ("nome", "endereco", "numero", "cnpj", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nome", "MyString"], ["endereco", "MyString"], ["numero", "MyString"], ["cnpj", "MyString"], ["created_at", "2016-04-11 23:39:36.408519"], ["updated_at", "2016-04-11 23:39:36.408519"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/fabricantes" for 127.0.0.1 at 2016-04-11 20:39:36 -0300
+Processing by FabricantesController#index as HTML
+  [1m[36mFabricante Load (0.2ms)[0m  [1mSELECT "fabricantes".* FROM "fabricantes"[0m
+  Rendered fabricantes/index.html.haml (4.5ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "fabricantes" ("nome", "endereco", "numero", "cnpj", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nome", "MyString"], ["endereco", "MyString"], ["numero", "MyString"], ["cnpj", "MyString"], ["created_at", "2016-04-11 23:39:36.423380"], ["updated_at", "2016-04-11 23:39:36.423380"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/fabricantes/1/edit" for 127.0.0.1 at 2016-04-11 20:39:36 -0300
+Processing by FabricantesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFabricante Load (0.2ms)[0m  [1mSELECT  "fabricantes".* FROM "fabricantes" WHERE "fabricantes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered fabricantes/_form.html.haml (7.6ms)
+  Rendered fabricantes/edit.html.haml (9.4ms)
+Completed 200 OK in 17ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (68.6ms)[0m  DELETE FROM "fabricantes";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  DELETE FROM sqlite_sequence where name = 'fabricantes';
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/fabricantes/new" for 127.0.0.1 at 2016-04-11 20:40:02 -0300
+Processing by FabricantesController#new as HTML
+  Rendered fabricantes/_form.html.haml (452.1ms)
+  Rendered fabricantes/new.html.haml (457.1ms)
+Completed 200 OK in 484ms (Views: 466.9ms | ActiveRecord: 0.4ms)
+Started POST "/fabricantes" for 127.0.0.1 at 2016-04-11 20:40:02 -0300
+Processing by FabricantesController#create as HTML
+  Parameters: {"utf8"=>"✓", "fabricante"=>{"nome"=>"Luiz", "endereco"=>"Rua zero", "numero"=>"400", "cnpj"=>"1111111111111"}, "commit"=>"Salvar"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "fabricantes" ("nome", "endereco", "numero", "cnpj", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nome", "Luiz"], ["endereco", "Rua zero"], ["numero", "400"], ["cnpj", "1111111111111"], ["created_at", "2016-04-11 23:40:02.807909"], ["updated_at", "2016-04-11 23:40:02.807909"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/fabricantes/1
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+Started GET "/fabricantes/1" for 127.0.0.1 at 2016-04-11 20:40:02 -0300
+Processing by FabricantesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFabricante Load (0.2ms)[0m  [1mSELECT  "fabricantes".* FROM "fabricantes" WHERE "fabricantes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered fabricantes/show.html.haml (2.2ms)
+Completed 200 OK in 10ms (Views: 3.2ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "fabricantes" ("nome", "endereco", "numero", "cnpj", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nome", "MyString"], ["endereco", "MyString"], ["numero", "MyString"], ["cnpj", "MyString"], ["created_at", "2016-04-11 23:40:02.830465"], ["updated_at", "2016-04-11 23:40:02.830465"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/fabricantes" for 127.0.0.1 at 2016-04-11 20:40:02 -0300
+Processing by FabricantesController#index as HTML
+  [1m[36mFabricante Load (0.1ms)[0m  [1mSELECT "fabricantes".* FROM "fabricantes"[0m
+  Rendered fabricantes/index.html.haml (3.5ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "fabricantes" ("nome", "endereco", "numero", "cnpj", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nome", "MyString"], ["endereco", "MyString"], ["numero", "MyString"], ["cnpj", "MyString"], ["created_at", "2016-04-11 23:40:02.841932"], ["updated_at", "2016-04-11 23:40:02.841932"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/fabricantes/1/edit" for 127.0.0.1 at 2016-04-11 20:40:02 -0300
+Processing by FabricantesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFabricante Load (0.1ms)[0m  [1mSELECT  "fabricantes".* FROM "fabricantes" WHERE "fabricantes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered fabricantes/_form.html.haml (4.7ms)
+  Rendered fabricantes/edit.html.haml (6.1ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.1ms)
+Started PATCH "/fabricantes/1" for 127.0.0.1 at 2016-04-11 20:40:02 -0300
+Processing by FabricantesController#update as HTML
+  Parameters: {"utf8"=>"✓", "fabricante"=>{"nome"=>"Luiz", "endereco"=>"Rua zero", "numero"=>"400", "cnpj"=>"1111111111111"}, "commit"=>"Salvar", "id"=>"1"}
+  [1m[35mFabricante Load (0.1ms)[0m  SELECT  "fabricantes".* FROM "fabricantes" WHERE "fabricantes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "fabricantes" SET "nome" = ?, "endereco" = ?, "numero" = ?, "cnpj" = ?, "updated_at" = ? WHERE "fabricantes"."id" = ?  [["nome", "Luiz"], ["endereco", "Rua zero"], ["numero", "400"], ["cnpj", "1111111111111"], ["updated_at", "2016-04-11 23:40:02.865416"], ["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/fabricantes/1
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+Started GET "/fabricantes/1" for 127.0.0.1 at 2016-04-11 20:40:02 -0300
+Processing by FabricantesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mFabricante Load (0.1ms)[0m  SELECT  "fabricantes".* FROM "fabricantes" WHERE "fabricantes"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered fabricantes/show.html.haml (0.4ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (71.5ms)[0m  DELETE FROM "fabricantes";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'fabricantes';
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/fabricantes/new" for 127.0.0.1 at 2016-04-11 20:40:55 -0300
+Processing by FabricantesController#new as HTML
+  Rendered fabricantes/_form.html.haml (459.6ms)
+  Rendered fabricantes/new.html.haml (464.6ms)
+Completed 200 OK in 493ms (Views: 476.3ms | ActiveRecord: 0.3ms)
+Started POST "/fabricantes" for 127.0.0.1 at 2016-04-11 20:40:56 -0300
+Processing by FabricantesController#create as HTML
+  Parameters: {"utf8"=>"✓", "fabricante"=>{"nome"=>"Luiz", "endereco"=>"Rua zero", "numero"=>"400", "cnpj"=>"1111111111111"}, "commit"=>"Salvar"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "fabricantes" ("nome", "endereco", "numero", "cnpj", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nome", "Luiz"], ["endereco", "Rua zero"], ["numero", "400"], ["cnpj", "1111111111111"], ["created_at", "2016-04-11 23:40:56.297051"], ["updated_at", "2016-04-11 23:40:56.297051"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/fabricantes/1
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms)
+Started GET "/fabricantes/1" for 127.0.0.1 at 2016-04-11 20:40:56 -0300
+Processing by FabricantesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFabricante Load (0.2ms)[0m  [1mSELECT  "fabricantes".* FROM "fabricantes" WHERE "fabricantes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered fabricantes/show.html.haml (2.3ms)
+Completed 200 OK in 10ms (Views: 3.3ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "fabricantes" ("nome", "endereco", "numero", "cnpj", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nome", "MyString"], ["endereco", "MyString"], ["numero", "MyString"], ["cnpj", "MyString"], ["created_at", "2016-04-11 23:40:56.320361"], ["updated_at", "2016-04-11 23:40:56.320361"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/fabricantes" for 127.0.0.1 at 2016-04-11 20:40:56 -0300
+Processing by FabricantesController#index as HTML
+  [1m[36mFabricante Load (0.1ms)[0m  [1mSELECT "fabricantes".* FROM "fabricantes"[0m
+  Rendered fabricantes/index.html.haml (3.6ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "fabricantes" ("nome", "endereco", "numero", "cnpj", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nome", "MyString"], ["endereco", "MyString"], ["numero", "MyString"], ["cnpj", "MyString"], ["created_at", "2016-04-11 23:40:56.332150"], ["updated_at", "2016-04-11 23:40:56.332150"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/fabricantes/1/edit" for 127.0.0.1 at 2016-04-11 20:40:56 -0300
+Processing by FabricantesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFabricante Load (0.1ms)[0m  [1mSELECT  "fabricantes".* FROM "fabricantes" WHERE "fabricantes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered fabricantes/_form.html.haml (4.6ms)
+  Rendered fabricantes/edit.html.haml (6.0ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.1ms)
+Started PATCH "/fabricantes/1" for 127.0.0.1 at 2016-04-11 20:40:56 -0300
+Processing by FabricantesController#update as HTML
+  Parameters: {"utf8"=>"✓", "fabricante"=>{"nome"=>"Luiz", "endereco"=>"Rua zero", "numero"=>"400", "cnpj"=>"1111111111111"}, "commit"=>"Salvar", "id"=>"1"}
+  [1m[35mFabricante Load (0.1ms)[0m  SELECT  "fabricantes".* FROM "fabricantes" WHERE "fabricantes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "fabricantes" SET "nome" = ?, "endereco" = ?, "numero" = ?, "cnpj" = ?, "updated_at" = ? WHERE "fabricantes"."id" = ?  [["nome", "Luiz"], ["endereco", "Rua zero"], ["numero", "400"], ["cnpj", "1111111111111"], ["updated_at", "2016-04-11 23:40:56.358641"], ["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/fabricantes/1
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+Started GET "/fabricantes/1" for 127.0.0.1 at 2016-04-11 20:40:56 -0300
+Processing by FabricantesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mFabricante Load (0.1ms)[0m  SELECT  "fabricantes".* FROM "fabricantes" WHERE "fabricantes"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered fabricantes/show.html.haml (0.4ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (67.1ms)[0m  DELETE FROM "fabricantes";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'fabricantes';
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/fabricantes/new" for 127.0.0.1 at 2016-04-11 20:41:26 -0300
+Processing by FabricantesController#new as HTML
+  Rendered fabricantes/_form.html.haml (459.4ms)
+  Rendered fabricantes/new.html.haml (464.2ms)
+Completed 200 OK in 490ms (Views: 473.9ms | ActiveRecord: 0.3ms)
+Started POST "/fabricantes" for 127.0.0.1 at 2016-04-11 20:41:27 -0300
+Processing by FabricantesController#create as HTML
+  Parameters: {"utf8"=>"✓", "fabricante"=>{"nome"=>"Luiz", "endereco"=>"Rua zero", "numero"=>"400", "cnpj"=>"1111111111111"}, "commit"=>"Salvar"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "fabricantes" ("nome", "endereco", "numero", "cnpj", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nome", "Luiz"], ["endereco", "Rua zero"], ["numero", "400"], ["cnpj", "1111111111111"], ["created_at", "2016-04-11 23:41:27.415189"], ["updated_at", "2016-04-11 23:41:27.415189"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/fabricantes/1
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+Started GET "/fabricantes/1" for 127.0.0.1 at 2016-04-11 20:41:27 -0300
+Processing by FabricantesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFabricante Load (0.2ms)[0m  [1mSELECT  "fabricantes".* FROM "fabricantes" WHERE "fabricantes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered fabricantes/show.html.haml (2.2ms)
+Completed 200 OK in 10ms (Views: 3.2ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "fabricantes" ("nome", "endereco", "numero", "cnpj", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nome", "MyString"], ["endereco", "MyString"], ["numero", "MyString"], ["cnpj", "MyString"], ["created_at", "2016-04-11 23:41:27.438409"], ["updated_at", "2016-04-11 23:41:27.438409"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/fabricantes" for 127.0.0.1 at 2016-04-11 20:41:27 -0300
+Processing by FabricantesController#index as HTML
+  [1m[36mFabricante Load (0.1ms)[0m  [1mSELECT "fabricantes".* FROM "fabricantes"[0m
+  Rendered fabricantes/index.html.haml (3.7ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.1ms)
+Started DELETE "/fabricantes/1" for 127.0.0.1 at 2016-04-11 20:41:27 -0300
+Processing by FabricantesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mFabricante Load (0.1ms)[0m  SELECT  "fabricantes".* FROM "fabricantes" WHERE "fabricantes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "fabricantes" WHERE "fabricantes"."id" = ?  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/fabricantes
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+Started GET "/fabricantes" for 127.0.0.1 at 2016-04-11 20:41:27 -0300
+Processing by FabricantesController#index as HTML
+  [1m[35mFabricante Load (0.2ms)[0m  SELECT "fabricantes".* FROM "fabricantes"
+  Rendered fabricantes/index.html.haml (0.7ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "fabricantes" ("nome", "endereco", "numero", "cnpj", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["nome", "MyString"], ["endereco", "MyString"], ["numero", "MyString"], ["cnpj", "MyString"], ["created_at", "2016-04-11 23:41:27.458637"], ["updated_at", "2016-04-11 23:41:27.458637"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/fabricantes/1/edit" for 127.0.0.1 at 2016-04-11 20:41:27 -0300
+Processing by FabricantesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mFabricante Load (0.1ms)[0m  SELECT  "fabricantes".* FROM "fabricantes" WHERE "fabricantes"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered fabricantes/_form.html.haml (7.0ms)
+  Rendered fabricantes/edit.html.haml (9.3ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.1ms)
+Started PATCH "/fabricantes/1" for 127.0.0.1 at 2016-04-11 20:41:27 -0300
+Processing by FabricantesController#update as HTML
+  Parameters: {"utf8"=>"✓", "fabricante"=>{"nome"=>"Luiz", "endereco"=>"Rua zero", "numero"=>"400", "cnpj"=>"1111111111111"}, "commit"=>"Salvar", "id"=>"1"}
+  [1m[36mFabricante Load (0.1ms)[0m  [1mSELECT  "fabricantes".* FROM "fabricantes" WHERE "fabricantes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "fabricantes" SET "nome" = ?, "endereco" = ?, "numero" = ?, "cnpj" = ?, "updated_at" = ? WHERE "fabricantes"."id" = ?[0m  [["nome", "Luiz"], ["endereco", "Rua zero"], ["numero", "400"], ["cnpj", "1111111111111"], ["updated_at", "2016-04-11 23:41:27.480388"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/fabricantes/1
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+Started GET "/fabricantes/1" for 127.0.0.1 at 2016-04-11 20:41:27 -0300
+Processing by FabricantesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFabricante Load (0.1ms)[0m  [1mSELECT  "fabricantes".* FROM "fabricantes" WHERE "fabricantes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered fabricantes/show.html.haml (0.4ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction

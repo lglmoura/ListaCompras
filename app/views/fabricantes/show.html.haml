@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Nome:
+  = @fabricante.nome
+%p
+  %b Endereço:
+  = @fabricante.endereco
+%p
+  %b Numero:
+  = @fabricante.numero
+%p
+  %b CNPJ:
+  = @fabricante.cnpj
+
+= link_to 'Edit', edit_fabricante_path(@fabricante)
+\|
+= link_to 'Back', fabricantes_path
