@@ -39,7 +39,7 @@ feature 'gerenciar Produto' do
 
     produto = FactoryGirl.create(:produto, fabricante: @fabricante)
     visit produtos_path
-    #save_and_open_page
+    
     click_link 'Excluir'
 
   end
@@ -50,6 +50,7 @@ feature 'gerenciar Produto' do
     fill_in 'Unidade',  with: dados[:unidade]
     fill_in 'Quantidade', with: dados[:quantidade]
     select dados[:fabricante], from: "Fabricante"
+    
 
   end
 

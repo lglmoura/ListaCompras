@@ -33,3 +33,64 @@ Migrating to CreateProdutos (20160411235947)
             FROM sqlite_temp_master
             WHERE name='index_produtos_on_fabricante_id' AND type='index'
 [0m
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-11 21:09:49 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VisitorsController#index as HTML
+  Rendered visitors/index.html.erb (16.5ms)
+Completed 200 OK in 83ms (Views: 65.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/fabricantes" for 127.0.0.1 at 2016-04-11 21:10:01 -0300
+Processing by FabricantesController#index as HTML
+  [1m[35mFabricante Load (0.2ms)[0m  SELECT "fabricantes".* FROM "fabricantes"
+  Rendered fabricantes/index.html.haml (7.0ms)
+Completed 200 OK in 48ms (Views: 33.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/fabricantes/new" for 127.0.0.1 at 2016-04-11 21:10:05 -0300
+Processing by FabricantesController#new as HTML
+  Rendered fabricantes/_form.html.haml (536.1ms)
+  Rendered fabricantes/new.html.haml (586.3ms)
+Completed 200 OK in 607ms (Views: 599.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/fabricantes" for 127.0.0.1 at 2016-04-11 21:10:27 -0300
+Processing by FabricantesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3JwkjALxaqhfGZUrUO43mHh/UZlxqo0Sdykgjhh6Pkmk2lsAfrXDLB0eKnuHJOkoMnOSCedLWHR0HIir2SZNCg==", "fabricante"=>{"nome"=>"Coca", "endereco"=>"sdsdfasdfa", "numero"=>"adsfa", "cnpj"=>"11111111111111"}, "commit"=>"Salvar"}
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "fabricantes" ("nome", "endereco", "numero", "cnpj", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["nome", "Coca"], ["endereco", "sdsdfasdfa"], ["numero", "adsfa"], ["cnpj", "11111111111111"], ["created_at", "2016-04-12 00:10:27.871315"], ["updated_at", "2016-04-12 00:10:27.871315"]]
+  [1m[36m (160.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/fabricantes/1
+Completed 302 Found in 209ms (ActiveRecord: 161.6ms)
+
+
+Started GET "/fabricantes/1" for 127.0.0.1 at 2016-04-11 21:10:28 -0300
+Processing by FabricantesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mFabricante Load (0.4ms)[0m  SELECT  "fabricantes".* FROM "fabricantes" WHERE "fabricantes"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered fabricantes/show.html.haml (4.3ms)
+Completed 200 OK in 77ms (Views: 30.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/fabricantes" for 127.0.0.1 at 2016-04-11 21:10:31 -0300
+Processing by FabricantesController#index as HTML
+  [1m[36mFabricante Load (0.3ms)[0m  [1mSELECT "fabricantes".* FROM "fabricantes"[0m
+  Rendered fabricantes/index.html.haml (2.3ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/produtos" for 127.0.0.1 at 2016-04-11 21:10:45 -0300
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.2ms)[0m  SELECT "produtos".* FROM "produtos"
+  Rendered produtos/index.html.haml (5.2ms)
+Completed 200 OK in 39ms (Views: 11.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/produtos/new" for 127.0.0.1 at 2016-04-11 21:10:48 -0300
+Processing by ProdutosController#new as HTML
+  [1m[36mFabricante Load (0.3ms)[0m  [1mSELECT "fabricantes".* FROM "fabricantes"[0m
+  Rendered produtos/_form.html.haml (28.6ms)
+  Rendered produtos/new.html.haml (30.5ms)
+Completed 200 OK in 39ms (Views: 32.2ms | ActiveRecord: 0.5ms)

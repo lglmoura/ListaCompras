@@ -1,0 +1,15 @@
+<h1>New produto</h1>
+<form novalidate="novalidate" class="simple_form new_produto" id="new_produto" action="/produtos" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+<div class='form-inputs'>
+<div class="form-group string optional produto_nome"><label class="string optional control-label" for="produto_nome">Nome</label><input class="string optional form-control" type="text" name="produto[nome]" id="produto_nome" /></div>
+<div class="form-group string optional produto_unidade"><label class="string optional control-label" for="produto_unidade">Unidade</label><input class="string optional form-control" type="text" name="produto[unidade]" id="produto_unidade" /></div>
+<div class="form-group float optional produto_quantidade"><label class="float optional control-label" for="produto_quantidade">Quantidade</label><input class="numeric float optional form-control" type="number" step="any" name="produto[quantidade]" id="produto_quantidade" /></div>
+<div class="form-group select optional produto_fabricante"><label class="select optional control-label" for="produto_fabricante_id">Fabricante</label><select class="select optional form-control" name="produto[fabricante_id]" id="produto_fabricante_id"><option value=""></option>
+<option value="1">Piraque</option></select></div>
+</div>
+<div class='form-actions'>
+<input type="submit" name="commit" value="Salvar" />
+</div>
+</form>
+
+<a href="/produtos">Back</a>
