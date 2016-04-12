@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :produtos
   resources :fabricantes
   resources :fabricantes
   root to: 'visitors#index'

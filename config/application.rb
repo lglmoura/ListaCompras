@@ -35,7 +35,7 @@ module Listacompra
     config.generators do |g|
         g.view_specs false
         g.helper_specs false
-        g.controller_spec false
+        g.controller_specs false
     end
   end
 end
