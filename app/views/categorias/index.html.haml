@@ -1,0 +1,23 @@
+%h1 Listing categorias
+
+%table
+  %thead
+    %tr
+      %th Nome
+      %th Super
+      %th
+      %th
+      %th
+
+  %tbody
+    - @categorias.each do |categoria|
+      %tr
+        %td= categoria.nome
+        %td= categoria.super.nome if !categoria.super.nil?
+        %td= link_to 'Show', categoria
+        %td= link_to 'Edit', edit_categoria_path(categoria)
+        %td= link_to 'Destroy', categoria, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Categoria', new_categoria_path

@@ -1,0 +1,9 @@
+= simple_form_for(@categoria) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :nome
+    = f.association :super, label_method: :nome, value_method: :id
+
+  .form-actions
+    = f.button :submit
